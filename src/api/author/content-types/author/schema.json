@@ -17,6 +17,9 @@
     "Lastname": {
       "type": "string"
     },
+    "fullName": {
+      "type": "string"
+    },
     "Biography": {
       "type": "customField",
       "customField": "plugin::ckeditor5.CKEditor",
