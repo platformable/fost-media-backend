@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "cookies_settings",
+  "info": {
+    "singularName": "cookie-settings",
+    "pluralName": "cookies-settings",
+    "displayName": "Cookie settings"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    }
+  }
+}
