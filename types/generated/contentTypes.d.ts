@@ -686,6 +686,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Evergreen: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     Excerpt: Schema.Attribute.Text;
     Featured_Image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -694,6 +695,9 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::post.post'> &
       Schema.Attribute.Private;
+    Newsletters: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    OneThingPick: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    OneThingWhy: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.UID<'Title'>;
     Title: Schema.Attribute.String;

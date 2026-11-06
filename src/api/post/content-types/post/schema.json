@@ -52,6 +52,22 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::author.author"
+    },
+    "Newsletters": {
+      "type": "boolean",
+      "default": false
+    },
+    "OneThingPick": {
+      "type": "boolean",
+      "default": false
+    },
+    "OneThingWhy": {
+      "type": "boolean",
+      "default": false
+    },
+    "Evergreen": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
