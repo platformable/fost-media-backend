@@ -443,7 +443,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
-    displayName: 'Author';
+    displayName: '7. Author';
     pluralName: 'authors';
     singularName: 'author';
   };
@@ -483,7 +483,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
-    displayName: 'Category';
+    displayName: '3. Category';
     pluralName: 'categories';
     singularName: 'category';
   };
@@ -587,7 +587,7 @@ export interface ApiCookieSettingsCookieSettings
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
-    displayName: 'Event';
+    displayName: '5. Event';
     pluralName: 'events';
     singularName: 'event';
   };
@@ -617,7 +617,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
 export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
   collectionName: 'industries';
   info: {
-    displayName: 'Industry';
+    displayName: '2. Industry';
     pluralName: 'industries';
     singularName: 'industry';
   };
@@ -663,7 +663,7 @@ export interface ApiIndustryIndustry extends Struct.CollectionTypeSchema {
 export interface ApiPostPost extends Struct.CollectionTypeSchema {
   collectionName: 'posts';
   info: {
-    displayName: 'Post';
+    displayName: '1. Post';
     pluralName: 'posts';
     singularName: 'post';
   };
@@ -745,7 +745,7 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
 export interface ApiTagTag extends Struct.CollectionTypeSchema {
   collectionName: 'tags';
   info: {
-    displayName: 'Tag';
+    displayName: '4. Tag';
     pluralName: 'tags';
     singularName: 'tag';
   };
@@ -770,7 +770,7 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
 export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
   collectionName: 'videos';
   info: {
-    displayName: 'Video';
+    displayName: '6. Video';
     pluralName: 'videos';
     singularName: 'video';
   };
