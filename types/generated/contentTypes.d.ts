@@ -491,9 +491,11 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Ads: Schema.Attribute.DynamicZone<['ad.category-ad']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
     industries: Schema.Attribute.Relation<
       'manyToMany',
       'api::industry.industry'

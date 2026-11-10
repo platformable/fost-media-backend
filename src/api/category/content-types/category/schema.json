@@ -25,6 +25,15 @@
       "relation": "manyToMany",
       "target": "api::industry.industry",
       "mappedBy": "categories"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Ads": {
+      "type": "dynamiczone",
+      "components": [
+        "ad.category-ad"
+      ]
     }
   }
 }
