@@ -496,6 +496,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Description: Schema.Attribute.Text;
+    Heading: Schema.Attribute.String;
     industries: Schema.Attribute.Relation<
       'manyToMany',
       'api::industry.industry'

@@ -14,6 +14,9 @@
     "Title": {
       "type": "string"
     },
+    "Heading": {
+      "type": "string"
+    },
     "posts": {
       "type": "relation",
       "relation": "manyToMany",
