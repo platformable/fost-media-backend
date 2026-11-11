@@ -27,6 +27,12 @@
         "preset": "defaultHtml"
       }
     },
+    "Role": {
+      "type": "string"
+    },
+    "Company": {
+      "type": "string"
+    },
     "Avatar": {
       "type": "media",
       "multiple": false,

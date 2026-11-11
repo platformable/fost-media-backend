@@ -460,6 +460,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
           preset: 'defaultHtml';
         }
       >;
+    Company: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -474,6 +475,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     Name: Schema.Attribute.String;
     posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
     publishedAt: Schema.Attribute.DateTime;
+    Role: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
