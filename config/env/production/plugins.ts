@@ -38,8 +38,8 @@ export default ({ env }) => ({
         },
       },
       settings: {
-        defaultFrom: env("SMTP_USERNAME", "alexei@platformable.com"),
-        defaultReplyTo: env("SMTP_USERNAME", "alexei@platformable.com"),
+        defaultFrom: "mark@platformable.com",
+        defaultReplyTo: "mark@platformable.com",
       },
     },
   },
