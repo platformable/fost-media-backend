@@ -7,8 +7,8 @@ const config = ({
     config: {
       provider: "nodemailer",
       providerOptions: {
-        host: env("SMTP_HOST"),
-        port: env("SMTP_PORT"),
+        host: env("SMTP_HOST", "smtp.gmail.com"),
+        port: env("SMTP_PORT", 465),
         auth: {
           user: env("SMTP_USERNAME"),
           pass: env("SMTP_PASSWORD"),
