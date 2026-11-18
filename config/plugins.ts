@@ -16,7 +16,7 @@ const config = ({
         },
       },
       settings: {
-        defaultFrom: "Platformable",
+        defaultFrom: "alexei@platformable.com",
         defaultReplyTo: "alexei@platformable.com",
       },
     },
