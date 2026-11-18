@@ -52,6 +52,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "admin::user"
+    },
+    "LinkedIn": {
+      "type": "string"
+    },
+    "Bluesky": {
+      "type": "string"
     }
   }
 }
