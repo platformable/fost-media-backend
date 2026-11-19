@@ -31,10 +31,12 @@ export default ({ env }) => ({
       providerOptions: {
         host: env("SMTP_HOST", "smtp.gmail.com"),
         port: env.int("SMTP_PORT", 465),
-        secure: true,
+
+        secure: env.int("SMTP_PORT", 465) === 465,
         auth: {
           user: env("SMTP_USERNAME"),
-          pass: env("SMTP_PASSWORD"),
+
+          pass: env("SMTP_PASSWORD") || "",
         },
       },
       settings: {
