@@ -1,0 +1,24 @@
+# Secrets: production values come from Coolify env vars
+.env
+.env.*
+!.env.example
+
+# Installed / built inside the image
+node_modules
+dist
+build
+.strapi
+.cache
+.tmp
+
+# VCS, editor and OS files
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
+*.log
+
+# Docker
+Dockerfile
+.dockerignore
