@@ -1,7 +1,7 @@
 FROM node:22-bookworm-slim
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN --mount=type=cache,target=/root/.npm npm ci
+RUN --mount=type=cache,target=/root/.npm npm ci --foreground-scripts --loglevel=http
 COPY . .
 RUN --mount=type=cache,target=/app/node_modules/.cache npm run build
 ENV NODE_ENV=production
