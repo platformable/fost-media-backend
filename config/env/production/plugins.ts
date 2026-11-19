@@ -1,14 +1,4 @@
 export default ({ env }) => {
-  const fp = (s = "") =>
-    require("crypto").createHash("sha256").update(s).digest("hex").slice(0, 8)
-  console.log(
-    "SMTP strapi:",
-    env("SMTP_USERNAME"),
-    env.int("SMTP_PORT", 465),
-    env.int("SMTP_PORT", 465) === 465,
-    fp(env("SMTP_PASSWORD")),
-  )
-
   return {
     // ...
     upload: {
@@ -44,6 +34,9 @@ export default ({ env }) => {
           port: env.int("SMTP_PORT", 465),
 
           secure: env.int("SMTP_PORT", 465) === 465,
+          // Force IPv4: nodemailer 10 tries IPv6 first, and Gmail rejects
+          // logins (535) from this server's IPv6 address
+          localAddress: "0.0.0.0",
           auth: {
             user: env("SMTP_USERNAME"),
 
