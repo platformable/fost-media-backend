@@ -1,6 +1,13 @@
 export default ({ env }) => {
-  console.log("SMTP_USERNAME:prod", env("SMTP_USERNAME"))
-  console.log("SMTP_PASSWORD length:prod", env("SMTP_PASSWORD")?.length)
+  const fp = (s = "") =>
+    require("crypto").createHash("sha256").update(s).digest("hex").slice(0, 8)
+  console.log(
+    "SMTP strapi:",
+    env("SMTP_USERNAME"),
+    env.int("SMTP_PORT", 465),
+    env.int("SMTP_PORT", 465) === 465,
+    fp(env("SMTP_PASSWORD")),
+  )
 
   return {
     // ...
