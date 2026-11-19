@@ -1,6 +1,6 @@
 export default ({ env }) => {
-  console.log("SMTP_USERNAME:prod", env("SMTP_USERNAME"))
-  console.log("SMTP_PASSWORD length:", env("SMTP_PASSWORD")?.length)
+  // console.log("SMTP_USERNAME:prod", env("SMTP_USERNAME"))
+  // console.log("SMTP_PASSWORD length:", env("SMTP_PASSWORD")?.length)
 
   return {
     // ...
