@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ads",
+  "info": {
+    "singularName": "ad",
+    "pluralName": "ads",
+    "displayName": "8. Ad"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Sponsor": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Ad_url": {
+      "type": "string",
+      "required": true
+    },
+    "UTM_code": {
+      "type": "string"
+    },
+    "Is_active": {
+      "type": "boolean"
+    },
+    "Priority": {
+      "type": "integer"
+    },
+    "Start_date": {
+      "type": "date"
+    },
+    "End_date": {
+      "type": "date"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "General_ads"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "Display_on"
+            },
+            "All posts"
+          ]
+        }
+      },
+      "inversedBy": "Ads"
+    },
+    "Display_mode": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "All posts",
+        "Custom",
+        "Homepage",
+        "Post Bottom"
+      ]
+    },
+    "Ad": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "inversedBy": "Bottom_ad"
+    }
+  }
+}

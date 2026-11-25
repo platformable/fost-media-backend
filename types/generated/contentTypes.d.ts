@@ -440,6 +440,49 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAdAd extends Struct.CollectionTypeSchema {
+  collectionName: 'ads';
+  info: {
+    displayName: '8. Ad';
+    pluralName: 'ads';
+    singularName: 'ad';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Ad: Schema.Attribute.Relation<'manyToMany', 'api::post.post'>;
+    Ad_url: Schema.Attribute.String & Schema.Attribute.Required;
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Display_mode: Schema.Attribute.Enumeration<
+      ['All posts', 'Custom', 'Homepage', 'Post Bottom']
+    > &
+      Schema.Attribute.Required;
+    End_date: Schema.Attribute.Date;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Is_active: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::ad.ad'> &
+      Schema.Attribute.Private;
+    posts: Schema.Attribute.Relation<'manyToMany', 'api::post.post'>;
+    Priority: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    Sponsor: Schema.Attribute.String;
+    Start_date: Schema.Attribute.Date;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    UTM_code: Schema.Attribute.String;
+  };
+}
+
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
@@ -500,6 +543,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Description: Schema.Attribute.Text;
+    General_ads: Schema.Attribute.Relation<'manyToMany', 'api::ad.ad'>;
     Heading: Schema.Attribute.String;
     industries: Schema.Attribute.Relation<
       'manyToMany',
@@ -678,7 +722,9 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Ads: Schema.Attribute.Relation<'manyToMany', 'api::ad.ad'>;
     authors: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
+    Bottom_ad: Schema.Attribute.Relation<'manyToMany', 'api::ad.ad'>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::category.category'
@@ -1310,6 +1356,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::ad.ad': ApiAdAd;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::code-of-conduct.code-of-conduct': ApiCodeOfConductCodeOfConduct;

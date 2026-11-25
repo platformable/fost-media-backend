@@ -68,6 +68,18 @@
     "Evergreen": {
       "type": "boolean",
       "default": false
+    },
+    "Ads": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ad.ad",
+      "mappedBy": "posts"
+    },
+    "Bottom_ad": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ad.ad",
+      "mappedBy": "Ad"
     }
   }
 }

@@ -37,6 +37,12 @@
       "components": [
         "ad.category-ad"
       ]
+    },
+    "General_ads": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ad.ad",
+      "mappedBy": "categories"
     }
   }
 }
